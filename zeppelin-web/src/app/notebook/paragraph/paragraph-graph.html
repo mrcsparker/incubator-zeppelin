@@ -27,6 +27,11 @@ limitations under the License.
     <svg></svg>
   </div>
 
+  <div ng-if="getGraphMode()=='multiBarHorizontalChart'"
+       id="p{{paragraph.id}}_multiBarHorizontalChart">
+    <svg></svg>
+  </div>
+
   <div ng-if="getGraphMode()=='pieChart'"
        id="p{{paragraph.id}}_pieChart">
     <svg></svg>

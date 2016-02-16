@@ -1329,6 +1329,9 @@ angular.module('zeppelinWebApp')
         d3g = pivotDataToD3ChartFormat(p, true, false, type).d3g;
         $scope.chart[type].yAxis.axisLabelDistance(50);
         $scope.chart[type].yAxis.tickFormat(function(d) {return yAxisTickFormat(d);});
+      } else if (type === 'multiBarHorizontalChart') {
+        d3g = pivotDataToD3ChartFormat(p, true, false).d3g;
+        console.log(d3g);
       } else if (type === 'lineChart' || type === 'stackedAreaChart' || type === 'lineWithFocusChart') {
         var pivotdata = pivotDataToD3ChartFormat(p, false, true);
         xLabels = pivotdata.xLabels;

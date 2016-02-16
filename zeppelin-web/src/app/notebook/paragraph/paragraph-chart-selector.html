@@ -25,6 +25,10 @@ limitations under the License.
           ng-click="setGraphMode('multiBarChart', true)"><i class="fa fa-bar-chart"></i>
   </button>
   <button type="button" class="btn btn-default btn-sm"
+          ng-class="{'active': isGraphMode('multiBarHorizontalChart')}"
+          ng-click="setGraphMode('multiBarHorizontalChart', true)"><i class="fa fa-bar-chart fa-rotate-90"></i>
+  </button>
+  <button type="button" class="btn btn-default btn-sm"
           ng-class="{'active': isGraphMode('pieChart')}"
           ng-click="setGraphMode('pieChart', true)"><i class="fa fa-pie-chart"></i>
   </button>
