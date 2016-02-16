@@ -1330,8 +1330,13 @@ angular.module('zeppelinWebApp')
         $scope.chart[type].yAxis.axisLabelDistance(50);
         $scope.chart[type].yAxis.tickFormat(function(d) {return yAxisTickFormat(d);});
       } else if (type === 'multiBarHorizontalChart') {
-        d3g = pivotDataToD3ChartFormat(p, true, false).d3g;
-        console.log(d3g);
+        var pivotdata = pivotDataToD3ChartFormat(p, true, false);
+        xLabels = pivotdata.xLabels;
+        d3g = pivotdata.d3g;
+        $scope.chart[type].xAxis.tickFormat(function(d) {return xAxisTickFormat(d, xLabels);});
+        $scope.chart[type].yAxis.tickFormat(function(d) {return yAxisTickFormat(d);});
+        $scope.chart[type].xAxis.axisLabelDistance(50);
+        $scope.chart[type].margin({top: 30, right: 60, bottom: 50, left: 70});
       } else if (type === 'lineChart' || type === 'stackedAreaChart' || type === 'lineWithFocusChart') {
         var pivotdata = pivotDataToD3ChartFormat(p, false, true);
         xLabels = pivotdata.xLabels;
